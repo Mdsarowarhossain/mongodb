@@ -1,7 +1,19 @@
 const mongoose = require("mongoose");
-const url = "mongodb+srv://sarowar:sarowar@cluster0.frhfs.mongodb.net/user?retryWrites=true&w=majority"
-const connectDB = async ()=>{
-    await mongoose.connect(url,{useUnifiedTopology: true,useNewUrlParser: true});
+const url =
+  // apni ekhaneo problem korchen cluster0 er jaygay apni user dichen
+  "mongodb+srv://sarowar:sarowar@cluster0.frhfs.mongodb.net/Cluster0?retryWrites=true&w=majority";
+const connectDB = () => {
+  mongoose
+    .connect(url, {
+      useUnifiedTopology: true,
+      useNewUrlParser: true,
+    })
+    .then(() => {
+      console.log("Db connect");
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 };
-console.log("Db connect")
+
 module.exports = connectDB;
