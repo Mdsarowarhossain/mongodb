@@ -6,12 +6,16 @@
     </head>
     <body>
         <h2>home</h2>
-        <form action="register" method="post" accept-charset="utf-8">
-            <input type="text" name="name" id="name" value="" />
-            <button type="submit"> submit</button>
+        <form  method="POST" >
+            <input type="text" name="nam" id="nam" value="" />
+            <button onclick="onsubmit()" type="submit"> submit</button>
         </form>
         
         
-        
+        <script type="text/javascript" charset="utf-8">
+            function onsubmit(e){
+                e.preventDefault();
+            }
+        </script>
     </body>
 </html>
